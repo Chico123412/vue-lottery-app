@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue Lottery</title>
+    <script>
+      const segmentCount = 1
+      const location = window.location
+      const route = location.pathname
+        .split('/')
+        .slice(0, 1 + segmentCount)
+        .join('/')
+      const rest = location.pathname
+        .slice(1)
+        .split('/')
+        .slice(segmentCount)
+        .join('/')
+        .replace(/&/g, '~and~')
+      location.replace(
+        location.protocol +
+          '//' +
+          location.hostname +
+          (location.port ? ':' + location.port : '') +
+          route +
+          '/?/' +
+          rest +
+          (location.search ? '&' + location.search.slice(1).replace(/&/g, '~and~') : '') +
+          location.hash,
+      )
+    </script>
+  </head>
+  <body></body>
+</html>
