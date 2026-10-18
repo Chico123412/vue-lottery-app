@@ -21,3 +21,16 @@ npm run build
 ```
 
 CRUD DummyJSON є симуляцією: API повертає результат, але не зберігає зміни на сервері. Store одразу оновлює локальний стан інтерфейсу.
+
+## FSD dependency flow
+
+```mermaid
+flowchart TD
+  App --> Pages
+  Pages --> Widgets
+  Widgets --> Features
+  Features --> Entities
+  Entities --> Shared
+```
+
+Імпорти дозволені лише в напрямку до нижчих шарів. Кожен slice відкриває Public API через `index.ts`.
