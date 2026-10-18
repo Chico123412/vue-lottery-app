@@ -10,18 +10,24 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint .",
+    "lint:fsd": "steiger ./src",
     "format": "prettier --write src"
   },
   "dependencies": {
+    "@primeuix/themes": "^3.0.1",
     "@vee-validate/yup": "^4.15.1",
     "bootstrap": "^5.3.8",
     "pinia": "^3.0.3",
+    "pinia-plugin-persistedstate": "^4.7.1",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.4.1",
     "vee-validate": "^4.15.1",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3",
     "yup": "^1.7.1"
   },
   "devDependencies": {
+    "@feature-sliced/steiger-plugin": "^0.8.0",
     "@tsconfig/node24": "^24.0.1",
     "@types/node": "^24.10.0",
     "@vitejs/plugin-vue": "^6.0.1",
@@ -32,6 +38,7 @@
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.6.2",
     "sass": "^1.93.3",
+    "steiger": "^0.7.0",
     "typescript": "~5.9.3",
     "vite": "^7.1.12",
     "vue-tsc": "^3.1.4"
