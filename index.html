@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="">
+<!doctype html>
+<html lang="uk">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vue Lottery users application" />
     <title>Vue Lottery</title>
+    <script>
+      ;(function (location) {
+        if (location.search.startsWith('?/')) {
+          const route = location.search
+            .slice(2)
+            .split('&')
+            .map((item) => item.replace(/~and~/g, '&'))
+            .join('?')
+          window.history.replaceState(null, '', location.pathname + route + location.hash)
+        }
+      })(window.location)
+    </script>
   </head>
   <body>
     <div id="app"></div>
